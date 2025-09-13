@@ -1,0 +1,31 @@
+[package]
+name = "discord-webull-trader"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+thiserror = "1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+dotenvy = "0.15"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+regex = "1"
+chrono = { version = "0.4", features = ["serde"] }
+directories = "5"
+
+# Webull unofficial API
+webull_unofficial = "1.1.1"
+
+# Discord self-bot
+[dependencies.serenity_self]
+default-features = false
+features = ["client", "gateway", "rustls_backend", "model", "collector"]
+version = "0.13.3"
+
+[[bin]]
+name = "dump_sources"
+path = "tools/dump_sources.rs"

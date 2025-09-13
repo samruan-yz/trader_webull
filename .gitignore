@@ -1,1 +1,7 @@
-config.json
+config.yaml
+.env
+all_rs_sources.txt
+
+# Added by cargo
+
+/target
